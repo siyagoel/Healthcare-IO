@@ -1,0 +1,371 @@
+<body>
+    
+    <head>
+        <title>Healthcare.io</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+      </head>
+      <body>
+        <header>
+
+            <h1>Healthcare.io</h1>
+
+          </div>
+        </header>
+
+    <div class= "toptitle"> 
+        <h1>
+            Medical Forums and Discussions
+        </h1>
+    </div>
+    <div class = "forumcat">
+    <div class="top-bar">
+        <h1>
+            My Forums & Recommended
+        </h1>
+    </div>
+    <div class="main">
+        <ol id = "OL1">
+        </ol>
+    </div>
+    <script src="contents-forum.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.getElementById('OL1');
+        for (let thread of threads) {
+            if (thread.recommended == 1){
+            var html = `
+            <li class="row">
+                <a href="./thread2.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li>
+            `
+            container.insertAdjacentHTML('beforeend', html);
+            }
+        }
+    </script>
+    </div>
+
+    <div class = "forumcat">
+    <div class="top-bar">
+        <h1>
+            Diseases
+        </h1>
+    </div>
+    <div class="main">
+        <ol id="OL2">
+        </ol>
+       
+    <script src="contents-forum.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.getElementById('OL2');
+        for (let thread of threads) {
+            if (thread.category == "Diseases") {
+            var html = `
+            
+            <li class="row">
+                <a href="./thread2.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li> 
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    }
+    </script>
+    </div> 
+    </div>
+
+
+    <div class = "forumcat">
+    <div class="top-bar">
+        <h1>
+            Prescription Medication
+        </h1>
+    </div>
+    <div class="main">
+        <ol id="OL3">
+        </ol>
+       
+    <script src="contents-forum.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.getElementById('OL3');
+        for (let thread of threads) {
+            if (thread.category == "Prescription Medication") {
+            var html = `
+            
+            <li class="row">
+                <a href="./thread2.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li> 
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    }
+    </script>
+    </div> 
+    </div>
+
+
+
+    <div class = "forumcat">
+    <div class="top-bar">
+        <h1>
+            Miscellaneous
+        </h1>
+    </div>
+    <div class="main">
+        <ol id="OL4">
+        </ol>
+       
+    <script src="contents-forum.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.getElementById('OL4');
+        for (let thread of threads) {
+            if (thread.category == "Miscellaneous") {
+            var html = `
+            
+            <li class="row">
+                <a href="./thread2.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li> 
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    }
+    </script>
+    </div> 
+    </div>
+
+
+    <div class = "middlebutton">
+    <button class = "middlebutton" onclick="document.getElementById('myPopup').style.display='block'">New Thread</button> </div>
+    </div>
+            <div id="myPopup" class="popup">
+                <div class="popup-container">
+                <span class="close" onclick="document.getElementById('myPopup').style.display='none';location.reload()">&times;</span>
+                <div class = "popuptitle">
+                <p><b>Create a New Thread!</b></p>
+                </div><br>
+          <form>
+      <label for="dropdown">Choose an option:</label>
+      <select id="dropdown" name="dropdown">
+        <option value="Select option" selected>Select Option</option>
+        <option value="Diseases">Diseases</option>
+        <option value="Prescription Medication">Prescription Medication</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+      </select>
+      <br><br>
+      <label for="textbox">Thread Name:</label>
+      <input type="text" id="textbox" name="textbox">
+      <br> <br>
+      <button type="button" onclick="document.getElementById('myPopup').style.display='none';submitForm()">Submit</button>
+    </form>
+    
+    
+    <button onclick="location.href='index.html'" class="back-btn">Back</button>
+
+    <br> 
+
+            
+
+                </div>
+            </div>
+
+            <p id="output"></p>
+
+    <style>
+        body {
+            margin: 10px 60px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        h1, h4, ol {
+            margin: 0;
+        }
+        p {
+            margin: 5px 0;
+        }
+        .top-bar {
+            background-color: rgb(125, 205, 255);
+            padding: 15px;
+            font-size: 15px;
+            text-align: center;
+        }
+        .main {
+            background-color: #F6F6EF;
+            padding: 10px 15px;
+            height: 20%;
+            overflow: scroll;
+        }
+
+        .two {
+            text-align: right;
+        }
+        .row {
+            padding: 5px 0;
+
+        }
+
+        .row:hover {
+            background-color: rgb(220, 232, 239);
+        }
+
+        .bottom {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+        .timestamp {
+            padding-right: 10px;
+        }
+        .toptitle {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .popuptitle {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+
+        .forumcat {
+            width: 47%;
+            display: inline-block;
+            vertical-align: top;
+            margin: 1%;
+            padding: 0%;
+            border: 1px solid #ccc;
+            
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        .popup-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            width: 500px;
+            height: 300px;
+            overflow-y: auto;
+        }   
+
+        .middlebutton {
+            border-color: lightblue;
+            border-width: 5px;
+            text-align: center;
+            padding: 10px;
+            outline-color: red;
+
+
+        }
+
+        .middlebutton:hover {
+            border-color: skyblue;
+            border-width: 5px;
+        }
+
+
+        .dropbtn {
+  background-color: lightblue;
+  color: black;
+  
+  font-size: 16px;
+  border: none;
+  font-family: times new roman;
+  border-width: 2px;
+
+}
+</style>
+    <script src="contents-forum.js"></script>
+    <script>
+      function submitForm() {
+        var dropdown = document.getElementById("dropdown");
+        var textbox = document.getElementById("textbox");
+        var output = document.getElementById("output");
+
+        var selectedOption = dropdown.options[dropdown.selectedIndex].text;
+        var enteredText = textbox.value;
+        dropdown.selectedIndex = 0;
+        textbox.value = ""; 
+        var length = defaultThreads.length;
+
+        var newThread = 
+        {
+        id: Number(length)+1,
+        title: enteredText,
+        author: "Example",
+        date: Date.now(),
+        content: "Thread content",
+        upvotes: 0,
+        category: selectedOption,
+        recommended: 1,
+        score: this.upvotes + 5 * this.comments,
+        comments: []
+        };
+
+        defaultThreads.push(newThread);
+        threads = defaultThreads;
+        localStorage.setItem('threads', JSON.stringify(threads));
+        localStorage.setItem('defaultThreads', JSON.stringify(defaultThreads));
+        window.location.reload();
+
+        
+    }
+
+        
+
+</script>
+
+ 
+</body>

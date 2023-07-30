@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+    <title>Food Survey</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+    <div class="container">
+        <h1>Food Survey</h1>
+        <p> Input the amount of fat you get from each one of these food groups. In the future, we will be able to automatically calculate this number! </p>
+        
+    </div>
+    
+	<form>
+		<label for="Alcoholic Beverages">Alcoholic Beverages:</label>
+		<input type="number" id="alcoholic_beverages" name="alcoholic_beverages" required>
+
+		<label for="Animal fats">Animal fats:</label>
+		<input type="number" id="animal_fats" name="animal_fats" required>
+
+		<label for="Animal Products">Animal Products:</label>
+		<input type="number" id="animal_products" name="animal_products" required>
+
+		<label for="Cereals - Excluding Beer">Cereals - Excluding Beer:</label>
+		<input type="number" id="cereals_excluding_beer" name="cereals_excluding_beer" required>
+
+		<label for="Eggs">Eggs:</label>
+		<input type="number" id="eggs" name="eggs" required>
+
+		<label for="Fish, Seafood">Fish, Seafood:</label>
+		<input type="number" id="fish_seafood" name="fish_seafood" required>
+
+		<label for="Fruits - Excluding Wine">Fruits - Excluding Wine:</label>
+		<input type="number" id="fruits_excluding_wine" name="fruits_excluding_wine" required>
+
+		<label for="Meat">Meat:</label>
+		<input type="number" id="meat" name="meat" required>
+
+		<label for="Milk - Excluding Butter">Milk - Excluding Butter:</label>
+		<input type="number" id="milk_excluding_butter" name="milk_excluding_butter" required>
+
+		<label for="Miscellaneous">Miscellaneous:</label>
+		<input type="number" id="miscellaneous" name="miscellaneous" required>
+
+		<label for="Offals">Offals:</label>
+		<input type="number" id="offals" name="offals" required>
+
+		<label for="Oilcrops">Oilcrops:</label>
+		<input type="number" id="oilcrops" name="oilcrops" required>
+
+		<label for="Pulses">Pulses:</label>
+		<input type="number" id="pulses" name="pulses" required>
+
+		<label for="Spices">Spices:</label>
+		<input type="number" id="spices" name="spices" required>
+
+		<label for="Starchy Roots">Starchy Roots:</label>
+		<input type="number" id="starchy_roots" name="starchy_roots" required>
+
+		<label for="Stimulants">Stimulants:</label>
+		<input type="number" id="stimulants" name="stimulants" required>
+
+		<label for="Sugar & Sweeteners">Sugar &amp; Sweeteners:</label>
+		<input type="number" id="sugar_sweeteners" name="sugar_sweeteners" required>
+
+		<label for="Treenuts">Treenuts:</label>
+		<input type="number" id="treenuts" name="treenuts" required>
+
+		<label for="Vegetable Oils">Vegetable Oils:</label>
+
+        <input type="number" id="vegetable_oils" name="vegetable_oils" required>
+
+        <label for="Vegetables">Vegetables:</label>
+        <input type="number" id="vegetables" name="vegetables" required>
+    
+        <label for="Vegetal Products">Vegetal Products:</label>
+        <input type="number" id="vegetal_products" name="vegetal_products" required>
+    
+    
+        <input type="submit" value="Submit" onclick="submitForm(event)">
+    </form>
+    
+    <div id="results"></div>
+    
+    <script src="script.js"></script>
+
+    
+
+</body>
+</html>

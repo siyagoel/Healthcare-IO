@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medication Tracker</title>
+	<style>
+		/* Add some basic styles */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		form {
+			margin: 20px;
+		}
+		table {
+			border-collapse: collapse;
+			margin: 20px;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
+		th {
+			background-color: #f2f2f2;
+		}
+		input[type="text"], input[type="date"], select {
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin: 8px 0;
+			width: 100%;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+<body>
+	<h1>Medication Tracker</h1>
+	<form id="med-form">
+		<label for="med-name">Medication Name:</label>
+		<input type="text" id="med-name" name="med-name" required>
+
+		<label for="frequency">Frequency:</label>
+		<select id="frequency" name="frequency" required>
+			<option value="daily">Daily</option>
+			<option value="weekly">Weekly</option>
+			<option value="monthly">Monthly</option>
+		</select>
+
+		<label for="last-taken">Last Taken:</label>
+		<input type="date" id="last-taken" name="last-taken" required>
+
+		<input type="submit" value="Add Medication">
+	</form>
+
+	<table id="med-table">
+		<thead>
+			<tr>
+				<th>Medication Name</th>
+				<th>Frequency</th>
+				<th>Last Taken</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Medication rows will be added here dynamically -->
+		</tbody>
+	</table>
+
+	<script>
+		// Define variables to store form and table elements
+		const medForm = document.getElementById('med-form');
+		const medTable = document.getElementById('med-table').getElementsByTagName('tbody')[0];
+
+		// Define an array to store medication data
+		let medications = [];
+
+		// Function to add medication to table
+		function addMedication() {
+			// Get values from form
+			const medName = document.getElementById('med-name').value;
+			const frequency = document.getElementById('frequency').value;
+			const lastTaken = document.getElementById('last-taken').value;
+
+			// Create a new medication object and add to array
+			const newMedication = { medName, frequency, lastTaken };
+			medications.push(newMedication);
+
+			// Add a new row to the table with the medication data
+			const newRow = medTable.insertRow();
+			const nameCell = newRow.insertCell(0);
+			const freqCell = newRow.insertCell(1);
+			const lastCell =newRow.insertCell(2);
+				nameCell.innerHTML = newMedication.medName;
+				freqCell.innerHTML = newMedication.frequency;
+				lastCell.innerHTML = newMedication.lastTaken;
+            
+                nameCell.setAttribute('contenteditable', 'true');
+			    freqCell.setAttribute('contenteditable', 'true');
+			    lastCell.setAttribute('contenteditable', 'true');
+			};
+		
+
+		// Event listener to add medication
+		medForm.addEventListener('submit', event => {
+			event.preventDefault();
+			addMedication();
+			renderMedications();
+		});
+
+		// Render medications on page load
+		renderMedications();
+	</script>
+</body>
+</html>

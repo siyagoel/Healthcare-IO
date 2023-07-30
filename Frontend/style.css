@@ -1,0 +1,261 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #0a70aa;
+    color: #ffffff;
+    padding: 10px 0;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .signup-form {
+    display: flex;
+  }
+  
+  .signup-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .signup-form button {
+    padding: 10px 20px;
+    background-color: rgb(125, 205, 255);
+    color: #333;
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Blurb styles */
+  .blurb {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .blurb h2 {
+    font-size: 24px;
+  }
+  
+  .blurb p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Search styles */
+.search {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.search input {
+  padding: 20px;
+  font-size: 24px;
+  border: 2;
+  border-radius: 30px;
+  margin-right: 10px;
+  width: 500px;
+  max-width: 80%;
+}
+
+.search button {
+  padding: 20px 40px;
+  background-color: #0a70aa;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 24px;
+}.search {
+  text-align: center;
+  margin: 50px 0;
+}
+
+/* Subsection styles */
+.subsections {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+  }
+  
+  .subsection {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .subsection h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .subsection p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .subsection button {
+    padding: 20px 30px;
+    background-color:#0a70aa;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  .search-title {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.container2 {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #f5f5f5;
+}
+
+.back-btn {
+	font-size: 16px;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	transition: background-color 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+	background-color: #3e8e41;
+}
+
+.big-btn {
+	font-size: 128px;
+	padding: 80px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	transition: background-color 0.2s ease-in-out;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+label {
+	flex-basis: 100%;
+	margin: 10px 0;
+	font-size: 18px;
+}
+
+input[type="number"] {
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	flex-basis: 100%;
+	margin: 5px 0;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	font-size: 16px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+	background-color: #3e8e41;
+}
+
+#results {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	display: none;
+}

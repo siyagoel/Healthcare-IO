@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Healthcare.io</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Healthcare.io</h1>
+        <form class="signup-form">
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="email" placeholder="Email">
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </header>
+    <div class="container">
+      <div class="blurb">
+        <h2>Healthcare.io</h2>
+        <p>We are bringing accessibility to personalized health care to anyone that wants it. Want to learn about the latest science around a specific drug or disease? Try today!</p>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search diseases...">
+        <button onclick="window.location.href='search.html';">Search</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <div class="container2">
+    <div class="subsections">
+        <div class="subsection">
+          <h2>Research on drugs</h2>
+          <p>Explore the latest research on up-and-coming treatments and drugs
+            </p>
+          <button id="research-btn" class="try-now">Try Now</button>
+        </div>
+        <div class="subsection">
+          <h2>Forums</h2>
+          <p>Join the community and discuss health topics with others.</p>
+          <button id="forums-btn" class="try-now">Try Now</button>
+        </div>
+        <div class="subsection">
+          <h2>Personal Profile</h2>
+          <p>Track your health and store your medical records securely.</p>
+          <button id="profile-btn" class="try-now">Try Now</button>
+        </div>
+        <div class="subsection">
+          <h2>Speak to a Doctor</h2>
+          <p>Need a perscription? Need to consult a doctor about treatment? Join a call today.
+            </p>
+          <button id="doc-btn" class="try-now">Try Now</button>
+        </div>
+      </div> </div>
+
+
+    </div>
+  </main>
+
+  <script>
+    // code for the sign-up button
+    const signupButton = document.getElementById("signup-button");
+    const signupModal = document.getElementById("signup-modal");
+    const closeButton = document.getElementById("close-button");
+    
+    signupButton.addEventListener("click", function() {
+      signupModal.style.display = "block";
+    });
+    
+    closeButton.addEventListener("click", function() {
+      signupModal.style.display = "none";
+    });
+  </script>
+
+  <script>
+
+
+    const researchBtn = document.getElementById('research-btn');
+    researchBtn.addEventListener('click', () => {
+      window.location.href = 'diseases.html';
+    });
+  
+    const forumsBtn = document.getElementById('forums-btn');
+    forumsBtn.addEventListener('click', () => {
+      window.location.href = 'forum.html';
+    });
+  
+    const profileBtn = document.getElementById('profile-btn');
+    profileBtn.addEventListener('click', () => {
+      window.location.href = 'profile.html'; 
+    });
+
+    const docBtn = document.getElementById('doc-btn');
+    docBtn.addEventListener('click', () => {
+      window.location.href = 'doctor-chat.html';
+    });
+
+  </script>
+  </body>
+
+  
+</html>
+

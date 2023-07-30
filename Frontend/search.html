@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+	<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+	<title>Search Results</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+	<py-config>
+		packages = ["openai", "langchain", "google-search-results"]
+  	</py-config>
+<body>
+
+    	<div class="header">
+		<div class="search-title">SEARCH: "parkinson's disease"</div>
+		<button onclick="location.href='index.html'" class="back-btn">Back</button>
+	</div>
+	<div class="container">
+		<py-script>
+			api_key = "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"
+
+			import openai
+			openai.api_key = api_key
+
+			import os
+			os.environ['SERPAPI_API_KEY'] = "e55bdae8a1c00ea4f603d85ccdcf09a4890f03fefe447b2703f2ccd6a147b574"
+
+			from langchain.agents import load_tools
+			from langchain.agents import initialize_agent
+			from langchain.llms import OpenAI
+			llm = OpenAI(temperature=0, openai_api_key=api_key)
+			tools = load_tools(["serpapi", "llm-math"], llm=llm)
+			agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
+
+			disease = "parkinson's disease"
+
+			a = agent.run("What is " + disease + "? What are the major symptoms, and what is the cause? Are there any potential treatments I can look at?")
+
+			b = agent.run("What is the efficacy of the drugs mentioned in " + a + "? What are the major side effects? What is the drug generally used for, and are there any alternative uses? What are the pros and cons of using this drug compared to others that aim to cure the same disease?")
+
+			print(a + b)
+		</py-script>
+		
+		
+	</div>
+</body>
+</html>
